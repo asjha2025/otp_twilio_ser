@@ -1,9 +1,9 @@
-// index.js
+
 // 1. استدعاء الحزم required
-require('dotenv').config(); // لتحميل المتغيرات من ملف .env
-const express = require('express');
-const cors = require('cors');
-const twilio = require('twilio');
+require("dotenv").config(); // لتحميل المتغيرات من ملف .env
+const express = require("express");
+const cors = require("cors");
+const twilio = require("twilio");
 
 // 2. إعداد متغيرات Twilio
 // لا تكتب الرموز هنا أبدًا! سيتم قراءتها من متغيرات البيئة
@@ -21,17 +21,17 @@ app.use(express.json()); // للسماح بقراءة بيانات JSON في ا�
 // 4. بناء الـ API Endpoints (نقاط الوصول)
 
 // Endpoint لإرسال رمز التحقق
-app.post('/start-verification', async (req, res) => {
+app.post("/start-verification", async (req, res) => {
   const { phoneNumber } = req.body;
 
   if (!phoneNumber) {
-    return res.status(400).send('Phone number is required.');
+    return res.status(400).send("Phone number is required.");
   }
 
   try {
     const verification = await client.verify.v2.services(verifySid)
       .verifications
-      .create({ to: phoneNumber, channel: 'sms' });
+      .create({ to: phoneNumber, channel: "sms" });
     res.status(200).send(verification);
   } catch (error) {
     res.status(500).send(error);
@@ -39,11 +39,11 @@ app.post('/start-verification', async (req, res) => {
 });
 
 // Endpoint للتحقق من الرمز
-app.post('/check-verification', async (req, res) => {
+app.post("/check-verification", async (req, res) => {
   const { phoneNumber, code } = req.body;
 
   if (!phoneNumber || !code) {
-    return res.status(400).send('Phone number and code are required.');
+    return res.status(400).send("Phone number and code are required.");
   }
 
   try {
@@ -62,13 +62,6 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-
-
-app.get('/', (req, res) => {
-  res.send('Hello from OTP Twilio Service!');
+app.get("/", (req, res) => {
+  res.send("Hello from OTP Twilio Service!");
 });
-
-
-
-
-مباشر
