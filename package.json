@@ -1,0 +1,26 @@
+{
+  "name": "otp_twilio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asjha2025/otp_twilio_ser.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asjha2025/otp_twilio_ser/issues"
+  },
+  "homepage": "https://github.com/asjha2025/otp_twilio_ser#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "twilio": "^5.8.0"
+  }
+}
